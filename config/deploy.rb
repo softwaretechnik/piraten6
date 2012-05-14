@@ -2,7 +2,7 @@ set :application, 'piraten6'
 set :user,        'webapp1'
 
 set :scm, :git
-set :repository, 'git@github.com:rmoriz/piraten6.git'
+set :repository, 'git://github.com/rmoriz/piraten6.git'
 set :branch, 'master'
 set :deploy_via, :remote_cache
 set :deploy_to, "/home/webapp1/apps/#{application}"
