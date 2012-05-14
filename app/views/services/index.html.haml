@@ -1,4 +1,4 @@
-%h2#nationwide Bundesebene:
+%h2#nationwide Bundesebene
 %p
   %table.table.table-bordered.table-striped
     %thead
@@ -9,7 +9,7 @@
         %th.span4
           Beschreibung
         %th.span2
-          IPv4
+          ePv4
         %th.span3
           IPv6
     %tbody
@@ -17,12 +17,13 @@
         = render s
 
 %hr
-%h2#statewide Landesebene:
+%h2#statewide Landesebenen
 
 - Service.states.each do |state|
   %p
     %h3{id: state}
-      = state
+      = state_to_human(state)
+      = "(#{state}):"
     %table.table.table-bordered.table-striped
       %thead
         %tr
