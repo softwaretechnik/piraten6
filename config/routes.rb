@@ -1,7 +1,5 @@
 Piraten6::Application.routes.draw do
   resources :services
-  get 'home/about'
-
   root to: 'services#index'
 
 

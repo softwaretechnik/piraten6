@@ -5,4 +5,4 @@ Feature: List all Services on the Homepage
 
   Scenario: Greeting on the homepage
     When I access the root page
-    Then I should see "Piraten6 — IPv6 bei der Piratenpartei Deutschland"
+    Then I should see "IPv6 bei der Piratenpartei Deutschland"
