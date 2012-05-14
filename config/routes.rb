@@ -1,7 +1,9 @@
 Piraten6::Application.routes.draw do
-  root :to => 'home#index'
+  resources :services
+  get 'home/about'
 
-  get "home/index"
+  root to: 'services#index'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

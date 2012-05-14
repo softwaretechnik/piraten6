@@ -1,0 +1,40 @@
+%h2#nationwide Bundesebene:
+%p
+  %table.table.table-bordered.table-striped
+    %thead
+      %tr
+        %th.span1
+        %th.span4
+          Hostname
+        %th.span4
+          Beschreibung
+        %th.span2
+          IPv4
+        %th.span3
+          IPv6
+    %tbody
+      - @services.nationwide.each do |s|
+        = render s
+
+%hr
+%h2#statewide Landesebene:
+
+- Service.states.each do |state|
+  %p
+    %h3{id: state}
+      = state
+    %table.table.table-bordered.table-striped
+      %thead
+        %tr
+          %th.span1
+          %th.span4
+            Hostname
+          %th.span4
+            Beschreibung
+          %th.span2
+            IPv4
+          %th.span3
+            IPv6
+      %tbody
+        - @services.statewide(state).each do |s|
+          = render s

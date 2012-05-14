@@ -24,6 +24,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'haml-rails'
+gem 'capistrano'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -40,14 +42,16 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-gem "capybara", :group => [:development, :test]
+gem 'capybara', :group => [:development, :test]
 group :test do
-  gem "cucumber-rails", :require => false
-  gem "capybara"
-  gem "database_cleaner"
+  gem 'cucumber-rails', :require => false
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
 end
 
-gem "github", ">= 0.7.0", :require => nil, :group => [:development]
+gem 'github', '>= 0.7.0', :require => nil, :group => [:development]
 guard_notifications = true
 group :development do
   case HOST_OS
@@ -65,21 +69,35 @@ group :development do
 end
 
 group :development do
-  gem "guard-livereload"
-  gem "yajl-ruby"
-  gem "rack-livereload"
-  gem "guard-bundler"
-  gem "guard-cucumber"
-  gem "guard-rspec"
-  gem "guard-unicorn"
+  gem 'guard-livereload'
+  gem 'yajl-ruby'
+  gem 'rack-livereload'
+  gem 'guard-bundler'
+  gem 'guard-cucumber'
+  gem 'guard-rspec'
+  gem 'thin'
+  gem 'quiet_assets'
+  gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 end
 
-gem "rspec-rails", :group => [:development, :test]
+group :production do
+  gem 'unicorn'
+end
+
+gem 'rspec-rails', :group => [:development, :test]
+
 group :assets do
-  gem "twitter-bootstrap-rails"
-  gem "therubyracer"
+  gem 'twitter-bootstrap-rails'
+  gem 'therubyracer'
 end
 
-gem "simple_form"
-gem "sqlite3", :group => [:development, :test]
-gem "unicorn"
+gem 'simple_form'
+gem 'sqlite3', :group => [:development, :test]
+
+# Deploy with Capistrano
+group :development do
+  gem 'capistrano'
+  gem 'capistrano-unicorn'
+  gem 'capistrano-file_db'
+  gem 'rvm-capistrano', '>=1.1.0'
+end

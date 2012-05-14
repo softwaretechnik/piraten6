@@ -1,0 +1,28 @@
+%tr
+  %td
+    - if service.only_ipv6?
+      .badge.badge-warning.span1
+        IPv6 only
+    - elsif service.only_ipv4?
+      .badge.badge-important.span1
+        IPv4 only
+    - elsif service.dualstack?
+      .badge.badge-success.span1
+        Dual
+  %td
+    = service.hostname
+  %td
+    = service.description
+  %td
+    %ul
+      - service.ipv4s.each do |ipv4|
+        %li= ipv4
+  %td
+    %ul
+      - if service.ipv6s.presence
+        - service.ipv6s.each do |ipv6|
+          %li=ipv6
+      - elsif service.ipv6s.presence
+        %li
+          %span.badge.badge-important
+            NEIN
