@@ -27,12 +27,14 @@ role :db,  "78.47.137.8", :primary => true # This is where Rails migrations will
 # UNICORN
 set :unicorn_pid, "#{shared_path}/pids/unicorn.pid"
 
-require "rvm/capistrano"
-require "bundler/capistrano"
-require "capistrano-unicorn"
-require "capistrano-file_db"
-
+require 'rvm/capistrano'
+require 'bundler/capistrano'
+require 'capistrano-unicorn'
+require 'capistrano-file_db'
+require 'whenever/capistrano'
 
 # Rails 3.1 assets, no public/{images, stylesheets, javascripts} directories
 set :normalize_asset_timestamps, false
 load 'deploy/assets'
+
+

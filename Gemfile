@@ -91,3 +91,6 @@ group :development do
   gem 'capistrano-file_db'
   gem 'rvm-capistrano', '>=1.1.0'
 end
+
+gem 'whenever', :require => false
+
