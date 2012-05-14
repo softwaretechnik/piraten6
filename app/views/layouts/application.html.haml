@@ -33,18 +33,26 @@
           = msg
       .content
         .row
-          .span10.header
+          .span10.topheader
             %h1 IPv6 bei der Piratenpartei Deutschland
+            .socialshareprivacy
           .span2
             = link_to image_tag('World_IPv6_launch_badge_256.png'), 'http://www.worldipv6launch.org/'
         .row
           .span12
             = yield
       %footer
+        %span.socialshareprivacy
         %p
-          Code &amp; Operations: Roland Moriz
-          |
-          = link_to 'Sources', 'https://github.com/rmoriz/piraten6'
-          |
-          = link_to 'Impressum', 'http://moriz.de/contact'
+          .pull-left
+            Code &amp; Operations: Roland Moriz
+            |
+            = link_to 'Twitter', 'https://twitter.com/piraten6'
+            |
+            = link_to 'Sources', 'https://github.com/rmoriz/piraten6'
+            |
+            = link_to 'Impressum', 'http://moriz.de/contact'
+          .pull-right
+            Eine automatische Aktualisierung erfolgt alle 3 Stunden.
+
     = javascript_include_tag "application"

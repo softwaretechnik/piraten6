@@ -12,8 +12,15 @@
  *= require_tree .
 */
 
-.header h1 {
-  margin-top: 60px;
+.topheader {
+  height: 120px;
+}
+
+.topheader h1 {
+  margin-top: 55px;
   font-size: 48px;
-  height: 100px;
+}
+
+footer {
+  margin-bottom: 150px;
 }
