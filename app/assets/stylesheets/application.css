@@ -11,3 +11,9 @@
  *= require_self
  *= require_tree .
 */
+
+.header h1 {
+  margin-top: 60px;
+  font-size: 48px;
+  height: 100px;
+}

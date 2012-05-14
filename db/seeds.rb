@@ -10,7 +10,10 @@
 
 Service.delete_all
 
-Service.create hostname: 'www.piratenpartei.de',               description: 'Website der Piratenpartei Deutschland', country: 'DE',              show: true
+Service.create hostname: 'www.piratenpartei.de',               description: 'Website der Piratenpartei Deutschland',    country: 'DE',           show: true
+Service.create hostname: 'wiki.piratenpartei.de',              description: 'Wiki Piratenpartei Deutschland',           country: 'DE',           show: true
+Service.create hostname: 'lqfb.piratenpartei.de',              description: 'LiquidFeedback Piratenpartei Deutschland', country: 'DE',           show: true
+Service.create hostname: 'www.piratenpad.de',                  description: 'Freier Etherpad Server',                   country: 'DE',           show: true
 Service.create hostname: 'www.piratenpartei-bayern.de',        description: 'Website des LV Bayern',                 country: 'DE', state: 'BY', show: true
 Service.create hostname: 'www.piratenpartei-nrw.de',           description: 'Website des LV Nordrhein-Westfalen',    country: 'DE', state: 'NW', show: true
 Service.create hostname: 'www.piratenpartei-sh.de',            description: 'Website des LV Schleswig-Holstein',     country: 'DE', state: 'SH', show: true

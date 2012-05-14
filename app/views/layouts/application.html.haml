@@ -33,8 +33,12 @@
           = msg
       .content
         .row
-          .span12
+          .span10.header
             %h1 IPv6 bei der Piratenpartei Deutschland
+          .span2
+            = link_to image_tag('World_IPv6_launch_badge_256.png'), 'http://www.worldipv6launch.org/'
+        .row
+          .span12
             = yield
       %footer
         %p
