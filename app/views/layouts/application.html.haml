@@ -42,17 +42,19 @@
           .span12
             = yield
       %footer
-        %span.socialshareprivacy
-        %p
-          .pull-left
-            Code &amp; Operations: Roland Moriz
-            |
-            = link_to 'Twitter', 'https://twitter.com/piraten6'
-            |
-            = link_to 'Sources', 'https://github.com/rmoriz/piraten6'
-            |
-            = link_to 'Impressum', 'http://moriz.de/contact'
-          .pull-right
-            Eine automatische Aktualisierung erfolgt alle 3 Stunden.
+        .span6.pull-left
+          Code &amp; Operations: Roland Moriz
+          |
+          = link_to 'Twitter', 'https://twitter.com/piraten6'
+          |
+          = link_to 'Sources', 'https://github.com/rmoriz/piraten6'
+          |
+          = link_to 'Impressum', 'http://moriz.de/contact'
+        .span2
+          = link_to 'JSON', root_url(format: 'json')
+          |
+          = link_to 'XML', root_url(format: 'xml')
+        .pull-right
+          Eine automatische Aktualisierung erfolgt alle 3 Stunden.
 
     = javascript_include_tag "application"

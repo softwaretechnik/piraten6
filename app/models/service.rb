@@ -65,6 +65,11 @@ class Service < ActiveRecord::Base
     ipv6s.size > 0 && ipv4s.size > 0
   end
 
+  def self.public_fields
+    [ :hostname, :description, :ipv4s, :ipv6s, :updated_at, :state, :country ]
+  end
+
+
   def self.states
     %w(BW BY BE BB HB HH HE MV NI NW RP SL SN ST SH TH)
   end
@@ -72,4 +77,5 @@ class Service < ActiveRecord::Base
   def self.update_addresses!
     all.map(&:update_addresses!)
   end
+
 end
