@@ -31,6 +31,9 @@ require 'rvm/capistrano'
 require 'bundler/capistrano'
 require 'capistrano-unicorn'
 require 'capistrano-file_db'
+
+# CRONJOB
+set :whenever_command, "bundle exec whenever"
 require 'whenever/capistrano'
 
 # Rails 3.1 assets, no public/{images, stylesheets, javascripts} directories
