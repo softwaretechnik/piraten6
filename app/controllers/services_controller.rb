@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class ServicesController < ApplicationController
 
   def index

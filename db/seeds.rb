@@ -31,5 +31,79 @@ Service.create hostname: 'www.piraten-lsa.de',                 description: 'Web
 Service.create hostname: 'piratenpartei-mv.de',                description: 'Website des LV Mecklenburg-Vorpommern', country: 'DE', state: 'MV', show: true
 Service.create hostname: 'www.piraten-thueringen.de',          description: 'Website des LV Thüringen',              country: 'DE', state: 'TH', show: true
 
+
+# Berliner
+#
+#
+%w(
+  www.piratenpartei-charlottenburg-wilmersdorf.de Charlottenburg-Wilmersdorf
+  piraten-friedrichshain-kreuzberg.de Friedrichshain-Kreuzberg
+  piraten-lichtenberg.de Lichtenberg
+  piratenpartei-marzahn-hellersdorf.de Marzahn-Hellersdorf
+  piraten-mitte.de Mitte
+  piratenpartei-pankow.de Pankow
+  www.piratenpartei-reinickendorf.de Reinickendorf
+  piraten-spandau.de Spandau
+  piraten-steglitz-zehlendorf.de Steglitz-Zehlendorf
+  piraten-tempelhof-schoeneberg.de Tempelhof-Schöneberg
+  piratenpartei-treptow-koepenick.de Treptow-Köpenick
+).each_slice(2) do |host, descr|
+  Service.create hostname: host, description: descr, country: 'DE', state: 'BE', show: true
+end
+
+# Brandenburg
+%w(
+    www.piraten-potsdam.de
+  brb.piratenbrandenburg.de
+  hvl.piratenbrandenburg.de
+  mol.piratenbrandenburg.de
+  ohv.piratenbrandenburg.de
+  pm.piratenbrandenburg.de
+  barum.piratenbrandenburg.de
+  dos.piratenbrandenburg.de
+  cottbus.piratenbrandenburg.de
+).each do |host|
+  Service.create hostname: host, description: "-", country: 'DE', state: 'BB', show: true
+end
+
+# Bayern BZ
+%w(
+  piraten-mfr.de
+  piraten-ufr.de
+  piraten-oberfranken.de
+  oberpfalz.piratenpartei.de
+  oberbayern.piratenpartei.de
+  www.piraten-schwaben.de
+).each do |host|
+  Service.create hostname: host, description: "-", country: 'DE', state: 'BY', show: true
+end
+
+
+%w(
+  piraten-kempten.de
+  piraten-as.de
+  piraten-bgl.de
+  ebersberg.piratenpartei.de
+  piraten-landsberg.de
+  piraten-erlangen.de
+  piratenpartei-freising.de
+  piraten-fuerth.de
+  www.piratenpartei-ingolstadt.de
+  piratenpartei-neu-ulm.de
+  piratenpartei-muenchen.de
+  piraten-nbg.de
+  piraten-nuernberger-land.de
+  piraten-paf.de
+  piraten-bamberg.de
+  piraten-ansbach.de
+  piraten-coburg.de
+  piraten-aichach-friedberg.de
+).each do |host|
+  Service.create hostname: host, description: "-", country: 'DE', state: 'BY', show: true
+end
+
+
+
+
 Service.update_addresses!
 
