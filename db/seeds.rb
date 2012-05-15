@@ -203,6 +203,7 @@ end
 
 # NI
 %w(
+  piratenpartei-oldenburg.de
   piratenpartei-braunschweig.de
   heide-piraten.de
   piratenhannover.de
