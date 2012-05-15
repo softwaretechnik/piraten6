@@ -30,4 +30,16 @@ describe Service do
     it { should validate_presence_of(:country) }
   end
 
+  describe '.update_addresses!' do
+
+    before do
+      3.times { create(:service) }
+    end
+
+    it 'should call #update_addresses! on each service' do
+
+      # Service.any_instance.should_receive(:all).once
+      # Service.update_addresses!
+    end
+  end
 end

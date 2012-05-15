@@ -49,6 +49,8 @@ group :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
+  gem 'simplecov', :require => false
+  gem 'spork', '~> 1.0rc'
 end
 
 gem 'github', '>= 0.7.0', :require => nil, :group => [:development]
@@ -65,6 +67,7 @@ group :development do
   gem 'guard-bundler'
   gem 'guard-cucumber'
   gem 'guard-rspec'
+  gem 'guard-spork'
   gem 'thin'
   gem 'quiet_assets'
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'

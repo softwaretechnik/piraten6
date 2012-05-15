@@ -20,11 +20,23 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
+  sequence :hostname do |n|
+    "www.piratenpartei-#{n}.de"
+  end
+
   factory :service do
-    hostname 'www.piratenpartei.de'
+    hostname
     description 'Homepage der Piratenpartei Deutschland'
     show true
     country 'DE'
     state ''
+  end
+
+  factory :nationwide_service do
+    state ''
+  end
+
+  factory :statewide_service do
+    state 'BY'
   end
 end
