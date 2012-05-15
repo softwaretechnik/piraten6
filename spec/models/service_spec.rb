@@ -24,12 +24,20 @@ describe Service do
   describe 'validations' do
     subject { create(:service) }
 
-    it { should validate_uniqueness_of(:hostname) }
-    it { should validate_presence_of(:hostname) }
+    it { should validate_uniqueness_of(:hostname)  }
+    it { should validate_presence_of(:hostname)    }
     it { should validate_presence_of(:description) }
-    it { should validate_presence_of(:country) }
+    it { should validate_presence_of(:country)     }
   end
 
+  describe 'should initialize empty address arrays' do
+    subject { Service.new }
+
+    its(:ipv4s) { should be_empty }
+    its(:ipv6s) { should be_empty }
+    its(:ipv4s) { should be_kind_of Array }
+    its(:ipv6s) { should be_kind_of Array }
+  end
 
   describe '#update_addresses' do
     subject { create(:service, hostname: 'example.org') }
@@ -96,17 +104,18 @@ describe Service do
       end
     end
   end
-  # d
-  # def only_ipv4?
-  #   ipv4s.size > 0 && ipv6s.size == 0
-  # end
 
-  # def only_ipv6?
-  #   ipv6s.size > 0 && ipv6s.size == 0
-  # end
+  context 'misc' do
+    describe '.states' do
+      subject { Service }
+      specify { subject.states.should == %w(BW BY BE BB HB HH HE MV NI NW RP SL SN ST SH TH) }
+    end
+  end
 
-  # def dualstack?
-  #   ipv6s.size > 0 && ipv4s.size > 0
-  # end
-
+  context 'api' do
+    describe 'json' do
+      subject { Service }
+      specify { subject.public_fields.should == [ :hostname, :description, :ipv4s, :ipv6s, :updated_at, :state, :country ] }
+    end
+  end
 end
