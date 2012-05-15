@@ -70,6 +70,28 @@ describe Service do
     end
   end
 
+  describe ".update_addresses!" do
+    subject { Service }
+    let(:services) do
+      result = []
+      3.times { result << build(:service) }
+      result
+    end
+
+    it 'should work on all services' do
+      subject.should_receive(:all).once.and_return([])
+      subject.update_addresses!
+    end
+
+    it 'should call #update_addresses! on each result' do
+      services.should have(3).elements
+      services.each { |s| s.should_receive(:update_addresses!) }
+      subject.should_receive(:all).once.and_return services
+
+      subject.update_addresses!
+    end
+  end
+
   context 'ip4/ipv6/dualstack recognition' do
     let(:dualstack) { build(:dualstack_service) }
     let(:ipv4only)  { build(:ipv4only_service) }
@@ -101,6 +123,20 @@ describe Service do
 
       it 'should return false when the service is dual-stack' do
         dualstack.should_not be_only_ipv6
+      end
+    end
+
+    describe '#dualstack?' do
+      it 'should return false when the service is ipv4 only' do
+        ipv4only.should_not be_dualstack
+      end
+
+      it 'should return false when the service is ipv6 only' do
+        ipv6only.should_not be_dualstack
+      end
+
+      it 'should return true when the service is dual-stack' do
+        dualstack.should be_dualstack
       end
     end
   end

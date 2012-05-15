@@ -11,5 +11,13 @@ require 'spec_helper'
 #   end
 # end
 describe ServicesHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '.whois_url' do
+    it 'should return a link to the RIPE whois webservice for an IPv4 address' do
+      helper.whois_url('1.2.3.4').should == 'https://apps.db.ripe.net/search/query.html?searchtext=1.2.3.4&searchSubmit=search'
+    end
+
+    it 'should return a link to the RIPE whois webservice for an IPv6 address' do
+      helper.whois_url('2a01:4f8:140:3ffd:2::1').should == 'https://apps.db.ripe.net/search/query.html?searchtext=2a01:4f8:140:3ffd:2::1&searchSubmit=search'
+    end
+  end
 end

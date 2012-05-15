@@ -20,4 +20,7 @@
 # Ignore Unicorn config
 /config/unicorn/production.rb
 
+# simplecov test/code coverage
+/coverage
+
 public/system
