@@ -14,4 +14,10 @@
 /log/*.log
 /tmp
 
+# Ignore local capistrano deploy.rb
+/config/deploy.rb
+
+# Ignore Unicorn config
+/config/unicorn/production.rb
+
 public/system
