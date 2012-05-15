@@ -32,6 +32,36 @@ Service.create hostname: 'piratenpartei-mv.de',                description: 'Web
 Service.create hostname: 'www.piraten-thueringen.de',          description: 'Website des LV Thüringen',              country: 'DE', state: 'TH', show: true
 
 
+# BaWü BzV
+#
+%w(
+  piraten-bzv-stuttgart.de
+  bzv.piratenpartei-tuebingen.de
+  bzv-karlsruhe.piraten-bw.de
+  bzv-fr.piratenpartei-bw.de
+).each do |host|
+  Service.create hostname: host, description: "-", country: 'DE', state: 'BW', show: true
+end
+
+# BaWü KV
+#
+%w(
+  piraten-rvfn.de
+  piratenpartei-reutlingen-tuebingen.de
+  piratenpartei-ludwigsburg.de
+  piraten-konstanz.de
+  piraten-rastatt.de
+  piratenpartei-heilbronn.de
+  piratenpartei-stuttgart.de
+  piraten-rnhd.de
+  piraten-ka-land.de
+  piraten-hdh.de
+  piratenpartei-ulm.de
+).each do |host|
+  Service.create hostname: host, description: "-", country: 'DE', state: 'BW', show: true
+end
+
+
 # Berliner
 #
 #
@@ -53,7 +83,7 @@ end
 
 # Brandenburg
 %w(
-    www.piraten-potsdam.de
+  www.piraten-potsdam.de
   brb.piratenbrandenburg.de
   hvl.piratenbrandenburg.de
   mol.piratenbrandenburg.de
@@ -78,7 +108,7 @@ end
   Service.create hostname: host, description: "-", country: 'DE', state: 'BY', show: true
 end
 
-
+# Bayern KV
 %w(
   piraten-kempten.de
   piraten-as.de
@@ -102,8 +132,64 @@ end
   Service.create hostname: host, description: "-", country: 'DE', state: 'BY', show: true
 end
 
+# Bremen KV
+#
+
+%w(
+  piraten-bremerhaven.de
+
+).each do |host|
+  Service.create hostname: host, description: "-", country: 'DE', state: 'HB', show: true
+end
+
+# Hamburg
 
 
+# Hessen KV
+%w(
+  piraten-bergstrasse.de
+  piratenpartei-darmstadt.de
+  piratenpartei-frankfurt.de
+  piratenpartei-giessen.de
+  piratenpartei-gross-gerau.de
+  piratenpartei-hochtaunus.de
+  piraten-kassel.de
+  kinzigpiraten.de
+  piraten-mtk.de
+  piratenpartei-marburg.de
+  kreispiraten-of.de
+  piratenpartei-rtk.de
+  piraten-sek.de
+  piraten-waldeck-frankenberg.de
+  piratenpartei-wetterau.de
+  piratenpartei-wiesbaden.de
+
+).each do |host|
+  Service.create hostname: host, description: "-", country: 'DE', state: 'HE', show: true
+end
+
+# Hessen
+%w(
+  piraten-bergstrasse.de
+  piratenpartei-darmstadt.de
+  piratenpartei-frankfurt.de
+  piratenpartei-giessen.de
+  piratenpartei-gross-gerau.de
+  piratenpartei-hochtaunus.de
+  piraten-kassel.de
+  kinzigpiraten.de
+  piraten-mtk.de
+  piratenpartei-marburg.de
+  kreispiraten-of.de
+  piratenpartei-rtk.de
+  piraten-sek.de
+  piraten-waldeck-frankenberg.de
+  piratenpartei-wetterau.de
+  piratenpartei-wiesbaden.de
+
+).each do |host|
+  Service.create hostname: host, description: "-", country: 'DE', state: 'HE', show: true
+end
 
 Service.update_addresses!
 

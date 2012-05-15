@@ -78,7 +78,7 @@ gem 'rspec-rails', :group => [:development, :test]
 
 group :assets do
   gem 'twitter-bootstrap-rails'
-  gem 'therubyracer'
+  #gem 'therubyracer'
 end
 
 gem 'simple_form'
