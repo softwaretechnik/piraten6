@@ -70,7 +70,7 @@ end
   piraten-friedrichshain-kreuzberg.de Friedrichshain-Kreuzberg
   piraten-lichtenberg.de Lichtenberg
   piratenpartei-marzahn-hellersdorf.de Marzahn-Hellersdorf
-  fraktion.piraten-mahe.de BVV-Fraktion Martzahn-Hellersdorf
+  fraktion.piraten-mahe.de BVV-Fraktion-Martzahn-Hellersdorf
   piraten-mitte.de Mitte
   piratenpartei-pankow.de Pankow
   www.piratenpartei-reinickendorf.de Reinickendorf
@@ -262,8 +262,6 @@ end
   piraten-kreis-unna.de
   piratenpartei-siegen.de
   piratenpartei-warendorf.de
-
-
 ).each do |host|
   Service.create hostname: host, description: "-", country: 'DE', state: 'NW', show: true
 end
