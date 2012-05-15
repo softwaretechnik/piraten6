@@ -70,7 +70,7 @@ end
   piraten-friedrichshain-kreuzberg.de Friedrichshain-Kreuzberg
   piraten-lichtenberg.de Lichtenberg
   piratenpartei-marzahn-hellersdorf.de Marzahn-Hellersdorf
-  fraktion.piraten-mahe.de BVV-Fraktion-Martzahn-Hellersdorf
+  fraktion.piraten-mahe.de BVV-Fraktion-Marzahn-Hellersdorf
   piraten-mitte.de Mitte
   piratenpartei-pankow.de Pankow
   www.piratenpartei-reinickendorf.de Reinickendorf
