@@ -186,9 +186,84 @@ end
   piraten-waldeck-frankenberg.de
   piratenpartei-wetterau.de
   piratenpartei-wiesbaden.de
-
 ).each do |host|
   Service.create hostname: host, description: "-", country: 'DE', state: 'HE', show: true
+end
+
+# MV
+%w(
+  piraten-usedom.de
+  www.schweriner-piraten.de
+  piraten-hgw.de
+).each do |host|
+  Service.create hostname: host, description: "-", country: 'DE', state: 'MV', show: true
+end
+
+# NI
+%w(
+  piratenpartei-braunschweig.de
+  heide-piraten.de
+  piratenhannover.de
+  piraten-stade.de
+  piratenpartei-delmenhorst.de
+  piraten-hameln.de
+  piratenpartei-hildesheim.de
+  piraten-osnabrueck.de
+  piratenpartei-wolfenbuettel.de
+  piraten-whv.de
+  piratenpartei-wolfsburg.de
+).each do |host|
+  Service.create hostname: host, description: "-", country: 'DE', state: 'NI', show: true
+end
+
+# NRW
+
+%w(
+  piratenpartei-aachen.de
+  piratenbochum.de
+  piratenpartei-bonn.de
+  piratenpartei-wermelskirchen.de
+  piratenpartei-lippe.de
+  piratenpartei-dortmund.de
+  piratenpartei-duesseldorf.de
+  piratenpartei-duisburg.de
+  piratenpartei-essen.de
+  piratenpartei-kleve.de
+  piratenpartei-gelsenkirchen.de
+  piratenpartei-gladbeck.de
+  piraten-hagen.de
+  piratenpartei-hamm.de
+  piratenpartei-guetersloh.de
+  piratenpartei-iserlohn.de
+  piratenpartei-koeln.de
+  piratenpartei-soest.de
+  piratenpartei-minden.de
+  piraten-kreiswesel.de
+  piratenpartei-marl.de
+  piratenpartei-muenster.de
+  neusser-piraten.de
+  piratenpartei-bocholt.de
+  piratenpartei-olpe.de
+  piratenpartei-owl.de
+  piraten-bergisches-land.de
+  piratenpartei-recklinghausen.de
+  piratenpartei-rhein-sieg.de
+  piratenpartei-rbk.de
+  piratenpartei-bergisch-gladbach.de
+  piratenpartei-burscheid.de
+  piratenpartei-kuerten.de
+  piratenpartei-leichlingen.de
+  piratenpartei-odenthal.de
+  piratenpartei-overath.de
+  piratenpartei-roesrath.de
+  piratenpartei-paderborn.de
+  piraten-kreis-unna.de
+  piratenpartei-siegen.de
+  piratenpartei-warendorf.de
+
+
+).each do |host|
+  Service.create hostname: host, description: "-", country: 'DE', state: 'NW', show: true
 end
 
 Service.update_addresses!
