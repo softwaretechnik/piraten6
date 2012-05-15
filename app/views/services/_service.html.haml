@@ -16,12 +16,14 @@
   %td
     %ul
       - service.ipv4s.each do |ipv4|
-        %li= ipv4
+        %li
+          = link_to ipv4, whois_url(ipv4)
   %td
     %ul
       - if service.ipv6s.presence
         - service.ipv6s.each do |ipv6|
-          %li=ipv6
+          %li 
+            = link_to ipv6, whois_url(ipv6)
       - elsif service.ipv6s.presence
         %li
           %span.badge.badge-important

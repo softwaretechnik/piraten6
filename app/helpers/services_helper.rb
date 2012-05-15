@@ -1,6 +1,10 @@
 # encoding: UTF-8
 module ServicesHelper
 
+  def whois_url(ip)
+    "https://apps.db.ripe.net/search/query.html?searchtext=#{ip}&searchSubmit=search"
+  end
+
   def state_to_human(state)
       case state
       when 'BW'
