@@ -11,17 +11,17 @@ set :rails_env, :production
 set :use_sudo,  false
 
 # RVM
-set :rvm_ruby_string, "ruby-1.9.3-p125@piraten6"
+set :rvm_ruby_string, 'ruby-1.9.3-p125@piraten6'
 before 'deploy', 'rvm:install_rvm'
 before 'deploy', 'rvm:install_ruby'
 
 # BUNDLER
-#set :bundle_flags,    "--quiet"
+#set :bundle_flags,    '--quiet'
 set :bundle_without,  [:development, :test]
 
-role :web, "78.47.137.8"
-role :app, "78.47.137.8"
-role :db,  "78.47.137.8", :primary => true # This is where Rails migrations will run
+role :web, '78.47.137.8'
+role :app, '78.47.137.8'
+role :db,  '78.47.137.8', :primary => true # This is where Rails migrations will run
 
 
 # UNICORN
@@ -33,11 +33,14 @@ require 'capistrano-unicorn'
 require 'capistrano-file_db'
 
 # CRONJOB
-set :whenever_command, "bundle exec whenever"
+set :whenever_command, 'bundle exec whenever'
 require 'whenever/capistrano'
 
 # Rails 3.1 assets, no public/{images, stylesheets, javascripts} directories
 set :normalize_asset_timestamps, false
 load 'deploy/assets'
 
+# Cleanup
+set :keep_releases, 5
+after 'deploy:update', 'deploy:cleanup'
 
