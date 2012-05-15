@@ -22,4 +22,5 @@ jQuery(document).ready(function($){
 
    $('#navbar').scrollspy();
    $('table').tablesorter();
+   $("a[href^='http']").attr('target','_blank');
 });
