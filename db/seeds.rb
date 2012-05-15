@@ -70,6 +70,7 @@ end
   piraten-friedrichshain-kreuzberg.de Friedrichshain-Kreuzberg
   piraten-lichtenberg.de Lichtenberg
   piratenpartei-marzahn-hellersdorf.de Marzahn-Hellersdorf
+  fraktion.piraten-mahe.de BVV-Fraktion Martzahn-Hellersdorf
   piraten-mitte.de Mitte
   piratenpartei-pankow.de Pankow
   www.piratenpartei-reinickendorf.de Reinickendorf
@@ -77,6 +78,7 @@ end
   piraten-steglitz-zehlendorf.de Steglitz-Zehlendorf
   piraten-tempelhof-schoeneberg.de Tempelhof-Schöneberg
   piratenpartei-treptow-koepenick.de Treptow-Köpenick
+
 ).each_slice(2) do |host, descr|
   Service.create hostname: host, description: descr, country: 'DE', state: 'BE', show: true
 end
