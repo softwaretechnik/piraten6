@@ -13,19 +13,39 @@
     %link{:href => "images/apple-touch-icon.png", :rel => "apple-touch-icon"}/
     %link{:href => "images/apple-touch-icon-72x72.png", :rel => "apple-touch-icon", :sizes => "72x72"}/
     %link{:href => "images/apple-touch-icon-114x114.png", :rel => "apple-touch-icon", :sizes => "114x114"}/
-  %body
+
+  %body#top{ data: { spy: 'scroll' } }
     .navbar.navbar-fixed-top
       .navbar-inner
         .container
-          %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+          %a.brn.btn-navbar{data: { toggle: 'collapse', target: '.nav-collapse' }}
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand{:href => "#"} Piraten6
-          .container.nav-collapse
+              %a.brand{:href => "#top"} [ Piraten6 ]
+          .nav-collapse
             %ul.nav
-              %li= link_to "Bundesebene", "#nationwide"
-              %li= link_to "Landesebene", "#statewide"
+              %li.active
+                = link_to "Bundesebene", "#nationwide"
+
+              %li.dropdown
+                %a.dropdown-toggle{href: '#statewide', data: { target: '#', toggle: 'dropdown' }}
+                  Landesebene
+                  %b.caret
+                %ul.dropdown-menu
+                  - Service.states.each do |state|
+                    %li
+                      = link_to state_to_human(state), "##{state}"
+            %ul.nav.pull-right
+              %li
+                = link_to 'github', 'https://github.com/rmoriz/piraten6'
+              %li.divider-vertical
+              %li
+                = link_to 'JSON', root_url(format: 'json')
+              %li
+                = link_to 'XML', root_url(format: 'xml')
+
+
     .container
       - flash.each do |name, msg|
         %div{:class => "alert alert-#{name == :notice ? "success" : "error"}"}

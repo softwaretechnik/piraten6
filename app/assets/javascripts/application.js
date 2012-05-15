@@ -19,4 +19,7 @@ jQuery(document).ready(function($){
    if($('.socialshareprivacy').length > 0){
      $('.socialshareprivacy').socialSharePrivacy(); 
    }
+
+   $('#navbar').scrollspy();
+   $('table').tablesorter();
 });
