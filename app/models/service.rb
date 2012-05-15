@@ -55,11 +55,11 @@ class Service < ActiveRecord::Base
   end
 
   def only_ipv4?
-    ipv4s.size > 0 && ipv6s.size == 0
+    ipv4s.size > 0 && ipv6s.empty?
   end
 
   def only_ipv6?
-    ipv6s.size > 0 && ipv6s.size == 0
+    ipv6s.size > 0 && ipv4s.empty?
   end
 
   def dualstack?

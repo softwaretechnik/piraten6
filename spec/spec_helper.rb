@@ -41,6 +41,7 @@ Spork.prefork do
     config.infer_base_class_for_anonymous_controllers = false
     config.include FactoryGirl::Syntax::Methods
   end
+  Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 end
 
 Spork.each_run do
@@ -49,7 +50,6 @@ Spork.each_run do
   # in spec/support/ and its subdirectories.
   FactoryGirl.reload
   I18n.backend.reload!
-  Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 end
 
 # --- Instructions ---

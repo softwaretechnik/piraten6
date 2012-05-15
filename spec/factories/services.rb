@@ -24,19 +24,39 @@ FactoryGirl.define do
     "www.piratenpartei-#{n}.de"
   end
 
+  sequence :description do |n|
+    "Homepage #{n}"
+  end
+
   factory :service do
     hostname
-    description 'Homepage der Piratenpartei Deutschland'
+    description
     show true
     country 'DE'
     state ''
-  end
 
-  factory :nationwide_service do
-    state ''
-  end
+    factory :nationwide_service do
+      state ''
+    end
 
-  factory :statewide_service do
-    state 'BY'
+    factory :statewide_service do
+      state 'BY'
+    end
+
+    factory :dualstack_service do
+      ipv4s %w( 78.47.137.2 )
+      ipv6s %w( 2a01:4f8:140:3ffd:2::1 )
+    end
+
+    factory :ipv4only_service do
+      ipv4s %w( 78.47.137.2 )
+      ipv6s %w( )
+    end
+
+    factory :ipv6only_service do
+      ipv4s %w( )
+      ipv6s %w( 2a01:4f8:140:3ffd:2::1 )
+    end
+
   end
 end
