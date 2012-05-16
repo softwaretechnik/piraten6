@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'spork'
 #uncomment the following line to use spork with the debugger
 #require 'spork/ext/ruby-debug'
@@ -18,15 +19,18 @@ Spork.prefork do
   # This file is copied to spec/ when you run 'rails generate rspec:install'
   ENV["RAILS_ENV"] ||= 'test'
 
-  # for devise
   require 'rails/application'
+  Spork.trap_method(Rails::Application, :eager_load!)
+
+  # for devise
   Spork.trap_method(Rails::Application, :reload_routes!)
 
   # routes reloading
   Spork.trap_method(Rails::Application::RoutesReloader, :reload!)
 
-
   require File.expand_path("../../config/environment", __FILE__)
+  Rails.application.railties.all { |r| r.eager_load! }
+
   require 'rspec/rails'
   require 'rspec/autorun'
   require 'capybara/rspec'
@@ -49,15 +53,16 @@ Spork.prefork do
     config.infer_base_class_for_anonymous_controllers = false
     config.include FactoryGirl::Syntax::Methods
   end
-  Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 end
 
 Spork.each_run do
   # This code will be run each time you run your specs.
   # Requires supporting ruby files with custom matchers and macros, etc,
   # in spec/support/ and its subdirectories.
+  ActiveSupport::Dependencies.clear
   FactoryGirl.reload
   I18n.backend.reload!
+  Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 end
 
 # --- Instructions ---

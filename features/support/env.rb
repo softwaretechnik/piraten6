@@ -2,6 +2,14 @@ require 'rubygems'
 require 'spork'
 #uncomment the following line to use spork with the debugger
 #require 'spork/ext/ruby-debug'
+#
+if ENV['WITH_COVERAGE']
+  require 'simplecov'
+  SimpleCov.start 'rails' do
+    add_filter '/features/'
+    add_filter '/spec/'
+  end
+end
 
 Spork.prefork do
   # Loading more in this block will cause your tests to run faster. However,
@@ -64,8 +72,7 @@ Spork.each_run do
   # The :transaction strategy is faster, but might give you threading problems.
   # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
   Cucumber::Rails::Database.javascript_strategy = :truncation
-
-
+  ActiveSupport::Dependencies.clear
 end
 
 # --- Instructions ---
