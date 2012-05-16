@@ -20,7 +20,8 @@ jQuery(document).ready(function($){
      $('.socialshareprivacy').socialSharePrivacy(); 
    }
 
-   $('#navbar').scrollspy();
+   //$('#navbar').scrollspy();
    $('table').tablesorter();
    $("a[href^='http']").attr('target','_blank');
+
 });

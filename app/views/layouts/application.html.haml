@@ -14,8 +14,9 @@
     %link{:href => "images/apple-touch-icon-72x72.png", :rel => "apple-touch-icon", :sizes => "72x72"}/
     %link{:href => "images/apple-touch-icon-114x114.png", :rel => "apple-touch-icon", :sizes => "114x114"}/
 
-  %body#top{ data: { spy: 'scroll' } }
-    .navbar.navbar-fixed-top
+  /%body#top{ data: { spy: 'scroll' } }
+  %body#top
+    .navbar.navbar-fixed-top#navbar
       .navbar-inner
         .container
           %a.brn.btn-navbar{data: { toggle: 'collapse', target: '.nav-collapse' }}
@@ -25,17 +26,19 @@
               %a.brand{:href => "#top"} [ Piraten6 ]
           .nav-collapse
             %ul.nav
-              %li.active
-                = link_to "Bundesebene", "#nationwide"
+              %li
+                = link_to 'Bundesebene', root_path(anchor: 'nationwide')
 
               %li.dropdown
                 %a.dropdown-toggle{href: '#statewide', data: { target: '#', toggle: 'dropdown' }}
-                  Landesebene
+                  Landesebenen
                   %b.caret
                 %ul.dropdown-menu
                   - Service.states.each do |state|
                     %li
-                      = link_to state_to_human(state), "##{state}"
+                      = link_to state_to_human(state), root_path(anchor: state)
+              %li
+                = link_to 'IPv6 jetzt einrichten!', tutorial_path
             %ul.nav.pull-right
               %li
                 = link_to 'github', 'https://github.com/rmoriz/piraten6'

@@ -1,0 +1,144 @@
+.subnav.subnav-fixed
+  %ul.nav.nav-pills
+    %li
+      = link_to 'Wie richte ich IPv6 ein?', '#howto'
+    %li
+      = link_to 'Provider', '#provider'
+
+
+%section#howto
+  .row
+    .span12
+      .page-header
+        %h2 
+          Wie richte ich IPv6 ein?
+          %small …was dazu gebraucht wird.
+    .span12
+      %p
+        %h3
+          Eine ordentliche Planung ist das A und O.
+    .span5
+      %p
+        Ziel soll es sein, die bereitgestellten Dienste (Webservice, Mailserver, etc.) neben der bisherigen IPv4-Anbindung auch parallel über eine IPv6-Anbindung anzubieten. 
+      %p
+        Die Clients sollen und können selbst entscheiden, welches der beiden Protokolle sie für Zugriffe bevorzugen. Dieser so genannte "dual-stack" ist die Hybridlösung, die spätestens zum 6.6.2012 von allen großen Anbietern angeboten werden wird und momentan die bestmögliche Lösung darstellt.
+    .span5.offset1
+      %h4 Folgende Punkte müssen geklärt werden:
+
+      %p
+        %ol
+          %li
+            Hat die Administratorin die nötige Zeit und das Wissen dazu?
+          %li
+            Bietet der Provider eine
+            %em
+              native IPv6-Anbindung 
+            an?
+          %li
+            Kann das eingesetze Betriebssystem mit IPv6 umgehen?
+          %li
+            Können die eingesetzen Serverprogramme mit IPv6 umgehen?
+          %li
+            Können Webanwendungen, Mailfilter, etc. mit IPv6 umgehen?
+          %li
+            Welche sicherheitskritischen Dinge sind zu beachten?
+
+
+%section#provider
+  .row
+    .span12
+      .page-header
+        %h2 
+          Der Provider
+          %small …ohne Ihn läuft nichts.
+    .span5
+      %h3
+      %p
+        Die wichtigste Vorraussetzung zur Einrichtung von IPv6 auf dem eigenen Server oder Webspace ist natürlich die Bereitstellung seitens des Providers. 
+
+      %p 
+        Zwar gibt es auch die Möglichkeit mittels "Tunnels" eine Anbindung über IPv6 zu realisieren, diese hat aber deutliche Nachteile in den Bereichen Performanz, Stabilität und Sicherheit. Wir raten davon ab.
+
+      %p 
+        Viele große Webhoster und Server-Anbieter in Deutschland bieten mittlerweile natives IPv6 ohne Zusatzkosten an.
+      
+      %p
+        Betreibt man eigene Hardware oder ist anderweitig konnektiert, so sollte man bei seinem Hosting/Upstream-Provider hinsichtlich der IPv6-Unterstützung anfragen. 
+      
+      %p
+        Eine weitere Informationsquelle kann das 
+        = link_to 'BGP Toolkit von Hurricane Electric', 'http://bgp.he.net/'
+        sein.
+      
+    .span5.offset1
+      %h4
+        Bekannte Provider mit IPv6-Unterstützung
+      %br
+      %table.table
+        %thead
+          %tr
+            %th
+              Name / ASN
+            %th
+              Server
+            %th
+              vServer
+            %th
+              Webspace
+            %th
+        %tbody
+          %tr
+            %td
+              Domainfactory
+            %td
+              %i.icon-minus
+            %td
+              %i.icon-minus
+            %td
+              %i.icon-ok
+            %td
+              = link_to 'Hinweise', 'http://www.df.eu/de/service/df-faq/technische-faq/ipv6/'
+          %tr
+            %td
+              Hetzner
+            %td
+              %i.icon-ok
+            %td
+              %i.icon-ok
+            %td
+              %i.icon-minus
+            %td
+              = link_to 'Hinweise', 'http://wiki.hetzner.de/index.php/Zusaetzliche_IP-Adressen'
+          %tr
+            %td
+              manitu
+            %td
+              %i.icon-ok
+            %td
+            %td
+              %i.icon-minus
+            %td
+              = link_to 'Hinweise', 'http://wiki.manitu.de/index.php/Server:IPv6-Adressen_auf_Root-Server_einrichten'
+          %tr
+            %td
+              OVH
+            %td
+              %i.icon-ok
+            %td
+              %i.icon-minus
+            %td
+              %i.icon-ok
+            %td
+              = link_to 'Hinweise', 'http://hilfe.ovh.de/AdministrationIpv4Ipv6'
+          %tr
+            %td
+              Strato
+            %td
+              %i.icon-ok
+            %td
+              %i.icon-ok
+            %td
+              %i.icon-ok
+            %td
+              = link_to 'Hinweise', 'http://www.strato-faq.de/2443'
+

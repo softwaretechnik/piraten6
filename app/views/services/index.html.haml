@@ -1,21 +1,21 @@
 %section{id: 'nationwide'}
-  %h2 Bundesebene
-  %p
-    %table.table.table-bordered.table-striped.tablesorter
-      %thead
-        %tr
-          %th.span1
-          %th.span4
-            Hostname
-          %th.span4
-            Beschreibung
-          %th.span2
-            IPv4
-          %th.span3
-            IPv6
-      %tbody
-        - @services.nationwide.each do |s|
-          = render s
+%h2 Bundesebene
+%p
+  %table.table.table-bordered.table-striped.tablesorter
+    %thead
+      %tr
+        %th.span1
+        %th.span4
+          Hostname
+        %th.span4
+          Beschreibung
+        %th.span2
+          IPv4
+        %th.span3
+          IPv6
+    %tbody
+      - @services.nationwide.each do |s|
+        = render s
 
 %section{id: 'statewide'}
 %h2 Landesebenen

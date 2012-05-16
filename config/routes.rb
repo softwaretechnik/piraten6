@@ -2,6 +2,7 @@ Piraten6::Application.routes.draw do
   resources :services
   root to: 'services#index'
 
+  match '/tutorial' =>  'pages#tutorial', :as => :tutorial
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

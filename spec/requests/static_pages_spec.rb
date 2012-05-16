@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe 'visiting the homepage' do
+describe 'Tutorial Page' do
   before do
-    visit '/'
+    visit '/tutorial'
   end
 
   it 'should have a body' do
