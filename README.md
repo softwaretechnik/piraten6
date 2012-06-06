@@ -13,7 +13,7 @@ http://piraten6.de/
 
 ## License
 
-see LICENSE file (BSD)
+see LICENSE file (MIT)
 
 ## Created by
 
