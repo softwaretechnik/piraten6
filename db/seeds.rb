@@ -220,6 +220,7 @@ end
 # NRW
 
 %w(
+  www.piratenpartei-bottrop.de
   piratenpartei-aachen.de
   piratenbochum.de
   piratenpartei-bonn.de
